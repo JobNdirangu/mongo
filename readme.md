@@ -71,3 +71,6 @@ Go back to student_portal
 
 Create a staff collection
 Insert at least 3 staff members with name, role, and department
+
+### ERD Diagram
+![alt text](image.png)
