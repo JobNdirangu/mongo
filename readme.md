@@ -1,6 +1,6 @@
 # 📘 Day 1: MongoDB Basics – Databases, Collections & Inserts
 
-Welcome to Day 1 of your MongoDB training! Today we'll focus on foundational concepts — setting up databases, creating collections by inserting documents, and viewing data.
+Setting up databases, creating collections by inserting documents, and viewing data.
 
 ---
 
