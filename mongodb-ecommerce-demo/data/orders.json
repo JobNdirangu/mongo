@@ -1,0 +1,21 @@
+[
+  {
+    "_id": { "$oid": "64a1c1e1f0f1a1a1a1a1c301" },
+    "customer_id": { "$oid": "64a1c1e1f0f1a1a1a1a1a101" },
+    "order_date": { "$date": "2024-06-01T00:00:00Z" },
+    "total": 2700,
+    "items": [
+      { "product_id": { "$oid": "64a1c1e1f0f1a1a1a1a1b201" }, "quantity": 2, "price": 1200 },
+      { "product_id": { "$oid": "64a1c1e1f0f1a1a1a1a1b202" }, "quantity": 1, "price": 300 }
+    ]
+  },
+  {
+    "_id": { "$oid": "64a1c1e1f0f1a1a1a1a1c302" },
+    "customer_id": { "$oid": "64a1c1e1f0f1a1a1a1a1a102" },
+    "order_date": { "$date": "2024-06-03T00:00:00Z" },
+    "total": 1500,
+    "items": [
+      { "product_id": { "$oid": "64a1c1e1f0f1a1a1a1a1b203" }, "quantity": 1, "price": 1500 }
+    ]
+  }
+]

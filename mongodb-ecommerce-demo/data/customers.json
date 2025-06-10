@@ -1,0 +1,17 @@
+
+[
+  {
+    "_id": { "$oid": "64a1c1e1f0f1a1a1a1a1a101" },
+    "name": "Alice Smith",
+    "email": "alice@example.com",
+    "address": { "city": "Nairobi", "zip": "00100" },
+    "created_at": { "$date": "2024-01-10T00:00:00Z" }
+  },
+  {
+    "_id": { "$oid": "64a1c1e1f0f1a1a1a1a1a102" },
+    "name": "Bob Johnson",
+    "email": "bob@example.com",
+    "address": { "city": "Mombasa", "zip": "80100" },
+    "created_at": { "$date": "2024-02-15T00:00:00Z" }
+  }
+]

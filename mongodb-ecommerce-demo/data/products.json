@@ -1,0 +1,26 @@
+[
+  {
+    "_id": { "$oid": "64a1c1e1f0f1a1a1a1a1b201" },
+    "name": "Wireless Mouse",
+    "category": "Electronics",
+    "price": 1200,
+    "stock": 40,
+    "ratings": [5, 4, 4, 5]
+  },
+  {
+    "_id": { "$oid": "64a1c1e1f0f1a1a1a1a1b202" },
+    "name": "USB Cable",
+    "category": "Accessories",
+    "price": 300,
+    "stock": 100,
+    "ratings": [4, 3, 5]
+  },
+  {
+    "_id": { "$oid": "64a1c1e1f0f1a1a1a1a1b203" },
+    "name": "Keyboard",
+    "category": "Electronics",
+    "price": 1500,
+    "stock": 20,
+    "ratings": [5, 5, 5]
+  }
+]
