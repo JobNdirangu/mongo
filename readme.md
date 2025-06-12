@@ -213,7 +213,6 @@ db.products.insertMany([
   }
 ]
 ```
-
 ## `data/orders.json`
 command
 ```bash
@@ -324,3 +323,108 @@ db.orders.aggregate([
 ]);
 
 ```
+
+
+
+
+
+group – Group and summarize
+👉 Count how many orders each customer made:
+
+```json
+db.orders.aggregate([
+  {
+    $group: {_id: "$customer_id",orderCount: { $sum: 1 }}
+  }
+])
+```
+
+limit – Limit the number of results
+👉 Show only the top 2 most expensive products:
+
+```bash
+db.products.aggregate([
+  { $sort: { price: -1 } },
+  { $limit: 2 }
+])
+```
+
+lookup – Join two collections
+👉 Show orders with customer info:
+
+```bash
+db.orders.aggregate([
+  {
+    $lookup: {
+      from: "customers",
+      localField: "customer_id",
+      foreignField: "_id",
+      as: "customer_info"
+    }
+  }
+])
+```
+
+
+<!-- 
+```json
+db.orders.aggregate([
+  {
+    $group: {_id: "$customer_id", orderCount: { $sum: 1 }}
+  },
+  {
+    $lookup: {
+      from: "customers",
+      localField: "_id",          // _id is customer_id
+      foreignField: "_id",        // match on _id of customers
+      as: "customer_info"
+    }
+  },
+  { $unwind: "$customer_info" },
+  {
+    $project: {_id: 0,customerName: "$customer_info.name",orderCount: 1}
+  }
+])
+``` -->
+
+
+<!-- 
+db.orders.aggregate([
+  // 1. Unwind items array so we can access each product
+  { $unwind: "$items" },
+
+  // 2. Lookup product info
+  {
+    $lookup: {
+      from: "products",
+      localField: "items.product_id",
+      foreignField: "_id",
+      as: "product_info"
+    }
+  },
+  { $unwind: "$product_info" },
+
+  // 3. Lookup customer info
+  {
+    $lookup: {
+      from: "customers",
+      localField: "customer_id",
+      foreignField: "_id",
+      as: "customer_info"
+    }
+  },
+  { $unwind: "$customer_info" },
+
+  // 4. Project the data you want
+  {
+    $project: {
+      _id: 0,
+      order_date: 1,
+      "customer_name": "$customer_info.name",
+      "customer_email": "$customer_info.email",
+      "product_name": "$product_info.name",
+      "product_price": "$product_info.price",
+      "quantity": "$items.quantity"
+    }
+  }
+]) -->
